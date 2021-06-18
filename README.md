@@ -1,12 +1,12 @@
-# SHLight_pytorch
+## SHLight_pytorch
 Add spherical harmonic lights to pytorch3D
 
-# Generate random lights
+### Generate random lights
 ```bash
 python generate_random_sphere.py
 ```
 
-# Use the light from Basel Illumination Prior
+### Use the light from Basel Illumination Prior
 ```bash
 python render_bip2017.py 39674
 ```
