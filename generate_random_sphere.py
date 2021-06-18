@@ -73,8 +73,9 @@ def main():
     vis = (vis * 255).astype(np.uint8)
 
     save_folder = mkdir(args.save_folder)
-    save_image(save_folder / f"sphere_random.jpg", vis)
+    save_image(save_folder / "sphere_random.jpg", vis)
 
+    print("Save results to", save_folder / "sphere_random.jpg")
 
 if __name__ == "__main__":
     main()

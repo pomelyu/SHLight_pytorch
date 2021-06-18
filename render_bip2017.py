@@ -28,7 +28,8 @@ def main():
 
     mesh = ico_sphere(3, device=device)
     verts, faces = mesh.get_mesh_verts_faces(0)
-    verts_rgb = np.repeat([[184, 131, 105]], len(verts), axis=0) / 255. # ambient color in BIP2017
+    # ambient color in BIP2017, see resources/BIP2017/sphere/sphereAmbient.png
+    verts_rgb = np.repeat([[184, 131, 105]], len(verts), axis=0) / 255.
     textures = Textures(verts_rgb=[torch.Tensor(verts_rgb).to(device)])
     meshes = Meshes(verts=[verts], faces=[faces], textures=textures)
 
@@ -85,6 +86,7 @@ def main():
     save_folder = mkdir(args.save_folder)
     save_image(save_folder / f"sphere_{sh_id}.jpg", np.concatenate([vis, gt], axis=1))
 
+    print("Save results to", save_folder / f"sphere_{sh_id}.jpg")
 
 if __name__ == "__main__":
     main()
